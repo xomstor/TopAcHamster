@@ -25,6 +25,19 @@ class Hamsterhome(View):
                 )
             except:
                 pass
+        elif method == 'update_age':
+            user_age = request.POST.get('age')
+            try:
+                if user_name == '':
+                    FormUser.objects.filter(email=user_email).update(
+                    age=user_age
+                    )
+                else:
+                    FormUser.objects.filter(name=user_name).update(
+                    age=user_age
+                    )
+            except:
+                pass
         elif method == 'create':
             try:
                 FormUser.objects.create(
@@ -33,7 +46,7 @@ class Hamsterhome(View):
                 )
             except:
                 pass
-        user_age = request.POST.get('age')
+
         # request.session['name'] = name
         # request.session['email'] = email
         # request.session['age'] = age

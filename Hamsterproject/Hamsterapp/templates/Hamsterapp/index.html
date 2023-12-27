@@ -26,5 +26,15 @@
         <input type="text" name="name" placeholder="Змінити Ім'я" required>
         <button>Обновити</button>
     </form>
+    <p></p>
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        <span style="font-size: medium; font-weight: bold; color: lightblue;">Змінити возраст с помощю форми пошуку пошті та ім'я:</span><p></p>
+        <input type="text" name="method" value="update_age" hidden>
+        <input type="text" name="email" placeholder="Шукати пошту">
+        <input type="text" name="name" placeholder="Шукати Ім'я">
+        <input type="number" name="age" placeholder="Змінити вік" required>
+        <button>Обновити вік</button>
+    </form>
 </body>
 </html>
