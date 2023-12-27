@@ -17,11 +17,25 @@ class Hamsterhome(View):
     def post(self, request):
         user_name = request.POST.get('name')
         user_email = request.POST.get('email')
+        method = request.POST.get('method')
+        if method == 'update':
+            try:
+                FormUser.objects.filter(email=user_email).update(
+                name=user_name
+                )
+            except:
+                pass
+        elif method == 'create':
+            try:
+                FormUser.objects.create(
+                name=user_name,
+                email=user_email
+                )
+            except:
+                pass
         user_age = request.POST.get('age')
-        FormUser.objects.create(name=user_name,
-                                email=user_email,
-                                age=user_age)
         # request.session['name'] = name
         # request.session['email'] = email
         # request.session['age'] = age
         return redirect('index')
+    

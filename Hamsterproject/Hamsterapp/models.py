@@ -8,7 +8,9 @@ class FormUser(models.Model):
                             help_text="Введіть ваше Ім'я")
     email = models.EmailField(verbose_name="Пошта",
                             null = False,
-                            help_text="Введіть вашу пошту")
+                            help_text="Введіть вашу пошту",
+                            unique = True,
+                            db_index = True)
     age = models.IntegerField(verbose_name="Вік",
                             null = False,
                             help_text="Введіть ваш вік")

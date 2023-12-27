@@ -9,12 +9,22 @@
     <title>Головна сторінка</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="{% url 'index' %}" method="post">
         {% csrf_token %}
+        <input type="text" name="method" value="create" hidden>
         <input type="text" name="name" placeholder="Ім'я" required>
         <input type="text" name="email" placeholder="Пошта" required>
         <input type="number" name="age" placeholder="Вік" required>
         <button>Відправити до серверу</button>
+    </form>
+    <p></p>
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        <span style="font-size: medium; font-weight: bold; color: lightblue;">Змінити Ім'я с помощю форми пошуку пошті:</span><p></p>
+        <input type="text" name="method" value="update" hidden>
+        <input type="text" name="email" placeholder="Шукати пошту" required>
+        <input type="text" name="name" placeholder="Змінити Ім'я" required>
+        <button>Обновити</button>
     </form>
 </body>
 </html>
