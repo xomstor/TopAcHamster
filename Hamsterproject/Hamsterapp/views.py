@@ -15,12 +15,12 @@ class Hamsterhome(View):
         #     return HttpResponse("Вы первыми вошли на сайт!")
         return render(request, self.template_home)
     def post(self, request):
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        age = request.POST.get('age')
-        FormUser.objects.create(name=name,
-                                email=email,
-                                age=age)
+        user_name = request.POST.get('name')
+        user_email = request.POST.get('email')
+        user_age = request.POST.get('age')
+        FormUser.objects.create(name=user_name,
+                                email=user_email,
+                                age=user_age)
         # request.session['name'] = name
         # request.session['email'] = email
         # request.session['age'] = age
