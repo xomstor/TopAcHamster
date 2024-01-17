@@ -4,18 +4,18 @@ from django.core.exceptions import ValidationError
 
 class ContentBanner(models.Model):
     title = models.CharField(
-        verbose_name = "Название"
+        verbose_name = "Название",
         max_length = 255,
-        null=False
+        null=False,
     )
     desc = models.TextField(
-        verbose_name= "Opisanie"
-        null=False
+        verbose_name= "Opisanie",
+        null=False,
     )
     number = models.IntegerField(
-        verbose_name = "Порядковый номер"
-        null = True
-        blank = True
+        verbose_name = "Порядковый номер",
+        null = True,
+        blank = True,
     )
     def clear(self):
         super().clear()

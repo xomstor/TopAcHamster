@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import ContentBanner
 
-# Register your models here.
+@admin.register(ContentBanner)
+class ContentBannerAdmin(admin.ModelAdmin):
+    pass
