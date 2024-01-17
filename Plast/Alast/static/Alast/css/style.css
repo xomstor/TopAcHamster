@@ -1,0 +1,57 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+html{height:100%}
+body{line-height:1}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+table{border-collapse:collapse;border-spacing:0}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(188, 236, 220);
+}
+.header__logo-img {
+    width: 100px;
+    height: 120px;
+}
+.header {
+    background-color: rgb(188, 236, 220);
+    width: 100%;
+}
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1440px;
+    margin: 0 auto;
+    height: 11.333vw;
+}
+.header__content .logo {
+width: 4.8vw;
+height: 6.933vw;
+margin-left: 4vw;
+}
+.header__content .menu {
+    margin-right: 4vw;
+    font-size: 1.6vw;
+    color: rgb(0, 0, 0);
+    justify-content: space-between;
+    align-items: center;
+    width: 30vw;
+}
+.header__content .feedback {
+    margin-right: 4vw;
+    font-size: 1.6vw;
+    font-weight: 400;
+    text-decoration: none;
+    margin-right: 4vw;
+    color: rgb(0, 0, 0);
+    justify-content: space-between;
+    align-items: center;
+    width: 30vw;
+}
+h2, textarea {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 42;
+}
