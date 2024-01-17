@@ -1,57 +1,140 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
-html{height:100%}
-body{line-height:1}
-ol,ul{list-style:none}
-blockquote,q{quotes:none}
-blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
-table{border-collapse:collapse;border-spacing:0}
+body,
+html {
+    background: #bad4ee;
+    font-family: 'Montserrat';
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: rgb(188, 236, 220);
 }
-.header__logo-img {
-    width: 100px;
-    height: 120px;
-}
-.header {
-    background-color: rgb(188, 236, 220);
+
+header {
     width: 100%;
+    border-bottom: 1px solid #F2F2F2;
+    background: #f0e3e3;
 }
+
 .header__content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1440px;
     margin: 0 auto;
-    height: 11.333vw;
-}
-.header__content .logo {
-width: 4.8vw;
-height: 6.933vw;
-margin-left: 4vw;
-}
-.header__content .menu {
-    margin-right: 4vw;
-    font-size: 1.6vw;
-    color: rgb(0, 0, 0);
+    width: 100vw;
+    height: 5.556vw;
     justify-content: space-between;
     align-items: center;
-    width: 30vw;
 }
-.header__content .feedback {
-    margin-right: 4vw;
-    font-size: 1.6vw;
-    font-weight: 400;
+
+.header__content-logo {
+    height: 2.494vw;
+}
+
+.header__content-menu a {
+    color: #062840;
+    text-align: center;
+    font-size: 0.972vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-right: 2.083vw;
     text-decoration: none;
-    margin-right: 4vw;
-    color: rgb(0, 0, 0);
-    justify-content: space-between;
-    align-items: center;
-    width: 30vw;
+    padding: 0;
+    font-stretch: expanded;
 }
-h2, textarea {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 42;
+
+.header__content-menu a:last-of-type {
+    margin-right: 0;
+}
+
+.header__content-menu a.active {
+    color: #155f32;
+    font-size: 16px;
+}
+
+.header__content-menu a svg {
+    width: 0.347vw;
+    height: 0.625vw;
+}
+
+.header__content-feedback svg {
+    width: 2.431vw;
+    height: 2.431vw;
+    margin-right: 0.833vw;
+    padding: 0;
+}
+
+.header__content-feedback svg:last-of-type {
+    margin-right: 0;
+}
+
+.banner {
+    background: url('../img/banner.png') no-repeat;
+    background-size: cover;
+    height: 34.722vw;
+    width: 100%;
+}
+
+.banner__content {
+    background: rgba(19, 19, 19, 0.60);
+    width: 100%;
+    height: 100%;
+}
+
+.banner__content p {
+    display: flex;
+    align-items: center;
+    margin-left: 1.472vw;
+    margin-right: 1.389vw;
+    margin-top: 0.667vw;
+    font-weight: 500;
+    font-size: 2.133vw;
+}
+
+.banner__content h1 {
+    color: #FFF;
+    width: 55.625vw;
+    font-size: 3.056vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 6.944vw 0 0 3.472vw;
+}
+
+.banner__content h1 span {
+    color: #22A0D9;
+}
+
+.banner__content h6 {
+    padding: 0.694vw 0 0 3.472vw;
+    color: #FFF;
+    font-size: 1.667vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.banner__content p span {
+    color: #f7fffd;
+    font-weight: 600;
+    font-size: 1.67vw;
+    margin-left: 3.5vw;
+    margin-top: 1.4vw;
+}
+
+.banner__content__feedback {
+    background-color: rgb(104, 182, 207);
+    margin-top: 6vw;
+    margin-left: 6.667vw;
+}
+.nexo4et {
+    margin-top: 4.667vw;
+    border: #22A0D9;
+    margin-left: 0.667vw;
+    border-radius: 3.vw;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 1.333vw;
+    font-size: 1.67vw;
+    margin-left: -1.4vw;
+    margin-top: -3.6vw;
+}
+.nexo4et .banner__content__feedback .svg {
+    width: 0.67vw;
+    height: 0.733vw;
 }
