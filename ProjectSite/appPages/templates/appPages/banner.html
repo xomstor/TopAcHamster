@@ -3,9 +3,11 @@
     <div class="banner__content">
         <h1>Совершите <span>лучшую</span> сделку на рынке недвижимости</h1>
         <h6>Почему именно мы?</h6>
-        <p>
-            <span>Доверие</span> - больше 5 лет мы помогаем людям
+        {% for content in banner %} 
+         <p>
+            <span>{{content.title}}</span> - больше 5 лет мы помогаем людям с {{content.desc}}
         </p>
+        {% endfor %}
         <p>
             <span>Чистая сделка</span> - мы рядом от сделки до покупки
         </p>

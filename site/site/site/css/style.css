@@ -14,7 +14,7 @@ header {
 .header__content {
     display: flex;
     margin: 0 auto;
-    width: 90vw;
+    width: 100vw;
     height: 5.556vw;
     justify-content: space-between;
     align-items: center;
@@ -22,12 +22,9 @@ header {
 
 .header__content-logo {
     height: 2.431vw;
+    margin-left: 20px;
 }
 
-.header__content-menu {
-    padding: 0;
-    margin: 0;
-}
 .header__content-menu a {
     color: #062840;
     text-align: center;
@@ -85,11 +82,11 @@ header {
 .banner__content h1 {
     color: #FFF;
     width: 55.625vw;
-    font-size: 2.917vw;
+    font-size: 3.056vw;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    padding: 6.944vw 0 0 4.514vw;
+    padding: 6.944vw 0 0 3.472vw;
 }
 
 .banner__content h1 span {
@@ -97,17 +94,17 @@ header {
 }
 
 .banner__content h6 {
-    padding: 0.694vw 0 0.347vw 4.514vw;
+    padding: 0.694vw 0 0 3.472vw;
     color: #FFF;
-    font-size: 1.25vw;
+    font-size: 1.667vw;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
 }
 .banner__content p {
-    margin-left: 4.514vw;
-    margin-top: 1.528vw;
-    font-weight: 500;
+    margin-left: 3.472vw;
+    margin-top: 1.389vw;
+    font-weight: 600;
     color: #fff;
     font-size: 1.111vw;
 }
@@ -117,7 +114,7 @@ header {
 .banner__content-feedback{
     background-color: #22A0D9;
     padding: 0.694vw 1.042vw;
-    margin-left: 4.514vw;
+    margin-left: 3.472vw;
     margin-top: 2.083vw;
     border: none;
     border-radius: 4.167vw;
@@ -130,4 +127,63 @@ header {
 .banner__content-feedback svg{
     width: 0.833vw;
     height: 0.694vw;
+}
+
+.banner__content-feedback:hover {
+    background-color: #055769;
+    transition: 0.4s;
+    transform: scale(1.2);
+}
+
+.container {
+    width: 90vw;
+    margin: 0 auto;   
+}
+
+.container-title {
+    color: #1f92ac;
+    font-size: 1.667vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.container-title span {
+    color: #019de6;
+}
+
+.about-me {
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0.3vw 0.2vw 0.6vw 0.5vw rgba(0, 32, 51, 0.05);
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    font-size: 3.2vw;
+    font-weight: 600;
+    margin-top: 2.778vw;
+}
+
+.about-me img {
+    width: 22vw;
+}
+
+.about-me content {
+    width: 106.667vw;
+}
+
+.about-me p {
+    width: 45vw;
+    margin-top: 4vw;
+    margin-top: 3vw;
+    font-size: 1.522vw;
+    font-weight: 600;
+    line-height: 180%;
+}
+
+.about-me h2 {
+    margin-top: 3vw;
+    font-size: 2.222vw;
+    font-weight: 600;
+    line-height: 180%;
 }

@@ -127,3 +127,9 @@ header {
     width: 0.833vw;
     height: 0.694vw;
 }
+
+.banner__content-feedback:hover {
+    background-color: #055769;
+    transition: 0.4s;
+    transform: scale(1.2);
+}
