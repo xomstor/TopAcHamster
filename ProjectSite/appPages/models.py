@@ -25,3 +25,39 @@ class ContentBanner(models.Model):
         
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name = 'Контент'
+        verbose_name_plural = 'Баннер'
+        
+class AboutMe(models.Model):
+    fio = models.CharField(
+        verbose_name="Фамилия Имя Отчество",
+        max_length=200,
+        null=False
+    )
+    desc = models.TextField(
+        verbose_name="Описание (Расскажите о себе обо мне)",
+        null=False
+    )
+    expert = models.CharField(
+        verbose_name="Должность (позиция)",
+        max_length=200,
+        null=False
+    )
+    photo = models.ImageField(
+        verbose_name="Фото",
+        null=False,
+        upload_to = "photos/%Y/%m/%d/"
+    )
+    def __str__(self):
+        return self.fio
+    
+    def clean(self):
+        super().clean()
+        if AboutMe.objects.count() > 1 and not self.pk:
+            raise ValidationError("Максимальное кол-во записей достигнуто. Всего доступно: 1")
+        
+    class Meta:
+        verbose_name = 'Информация'
+        verbose_name_plural = 'Обо мне'
