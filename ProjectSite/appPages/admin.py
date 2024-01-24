@@ -26,8 +26,8 @@ class ContentBannerAdmin(admin.ModelAdmin):
 class AboutMeAdmin(admin.ModelAdmin):
 
     list_display = ['fio', 'desc', 'expert', 'photo',]
-    list_display_links = ['fio', 'desc','expert',]
-    list_editable = [ 'photo',]
+    list_display_links = ['fio', 'desc','photo',]
+    list_editable = [ 'expert',]
 
     def clean(self):
         super().clean()
