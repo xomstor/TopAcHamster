@@ -9,3 +9,9 @@ class HomePage(View):
         }
         return render(request, 'appPages/home/index.html', data)
     
+class AboutMePage(View):
+    def get(self, request):
+        data = {
+            'about':AboutMe.objects.all(),
+        }
+        return render(request, 'appPages/about/index.html', data)
