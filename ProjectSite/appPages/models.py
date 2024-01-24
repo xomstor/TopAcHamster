@@ -61,3 +61,22 @@ class AboutMe(models.Model):
     class Meta:
         verbose_name = 'Информация'
         verbose_name_plural = 'Обо мне'
+        
+class Documents(models.Model):
+    title = models.CharField(
+        verbose_name="Название (название документа)",
+        max_length=100,
+        null=False
+    )
+    file = models.FileField(
+        verbose_name="Файл (документ)",
+        null=True,
+        blank = True,
+        upload_to = "documents/%Y/%m/%d/"
+    )
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Документ'
+        verbose_name_plural = 'Документы'

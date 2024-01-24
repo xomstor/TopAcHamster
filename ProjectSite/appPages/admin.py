@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ContentBanner, AboutMe
+from .models import ContentBanner, AboutMe, Documents
 from django.core.exceptions import ValidationError
 
 @admin.register(ContentBanner)
@@ -41,3 +41,13 @@ class AboutMeAdmin(admin.ModelAdmin):
         model = AboutMe
         verbose_name = 'Обо мне'
         verbose_name_plural = 'Обо мне'
+     
+@admin.register(Documents)        
+class DocumentsAdmin(admin.ModelAdmin):
+    list_display = ['title', 'file',]
+    list_display_links = ['title', 'file',]
+    
+    class Meta:
+        model = Documents
+        verbose_name = 'Документ'
+        verbose_name_plural = 'Документы'

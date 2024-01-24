@@ -8,15 +8,23 @@
       <span style="color: blue;">МНЕ</span>
    </h1>
    <div class="about-me">
-      <img src="./img/teta.svg" alt="">
+      <img src="{{about_me.photo.url}}" alt="">
       <div class="about-me__content">
-         <h2> Хомяк Хомяков Артёмович</h2>
-         <p>Привет! Меня зовут Хомяк Хомяков Артёмович, и я эксперт в сфере жратвы и помощи людям пожрать. Я обладаю
-            глубокими знаниями и опытом в этой области, и моя цель - помочь людям осуществить успешные сделки с кафе и
-            магазинами.
-            <span style="font-size: 32px; text-shadow: 20px;"><p></p>Эксперт в сфере доширака</span></p>
+         <h2> {{about_me.fio}}</h2>
+         <p>{{about_me.desc}}
+            <span style="font-size: 32px; text-shadow: 20px;"><p></p>{{about_me.expert}}</span></p>
       </div>
    </div>
 </section>
 
+<div class="queryset">
+   {% for i in documents %}
+   <a href="{{i.file.url}}" target="_blank">{{i.title}}</a>
+   <h2>------</h2>
+
+   {% endfor %}
+</div>
+
+
 {% endblock %}
+
