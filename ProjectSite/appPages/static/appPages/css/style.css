@@ -7,6 +7,7 @@ html {
 
 header {
     width: 100%;
+    width: 90vw;
     border-bottom: 1px solid #F2F2F2;
     background: #FFF;
 }
@@ -186,4 +187,28 @@ header {
     font-size: 2.222vw;
     font-weight: 600;
     line-height: 180%;
+}
+.document {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.document__title {
+    display: flex;
+    align-items: center;
+    font-size: 1.8vw;
+    gap: 0.5vw;
+    color: #01191f;
+    font-weight: 500;
+}
+.document a {
+    color: #32dafc;
+    text-decoration: none;
+    margin-left: 1.8vw;
+    font-size: 1.5vw;
+    background-color: #101c85d0;
+    padding: 0.772vw 1.543vw;
+    margin-top: 0.772vw;
+    justify-content: space-between;
+    border-radius: 3.858vw;
 }
