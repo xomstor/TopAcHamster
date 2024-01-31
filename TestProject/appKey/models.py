@@ -12,7 +12,30 @@ class Category(models.Model):
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
         
+class SubCategory(models.Model):
+    title = models.CharField(
+    "Подкатегория",
+    max_length=100,
+    null=False
+    )
+    category = models.ForeignKey(
+    Category,
+    on_delete=models.PROTECT,
+    verbose_name = 'Категория'
+    )
+    def __str__(self):
+        return f'Категории: {self.category.title} | Подкатегория: {self.title}'
+    class Meta:
+        verbose_name = 'Подкатегория'
+        verbose_name_plural = 'Подкатегории'        
+
 class Product(models.Model):
+    subcategory = models.ForeignKey(
+        SubCategory,
+        on_delete=models.PROTECT,
+        verbose_name = 'Подкатегория',
+        null=False
+    )
     title = models.TextField(
         "Название",
         null=False,
@@ -27,10 +50,20 @@ class Product(models.Model):
         "Стоимость",
         null=False
     )
-    category = models.ForeignKey(
-        Category,
-        on_delete=models.PROTECT
-        )
+    currency = models.CharField(
+        "Валюта",
+        max_length=10,
+        null=False,
+        choices = (
+            ('RUB', 'RUB'),
+            ('USD', 'USD баксы'),
+            ('EUR', 'EUR евреи'),
+            ('UAH', 'UAH гривны'),
+            ('CNY', 'CNY юань'),
+            ('BTC', 'BTC биточки')
+        ),
+        default="RUB",
+    )
     date = models.DateTimeField(
         auto_now_add=True
         )
@@ -39,3 +72,4 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
+        
