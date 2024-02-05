@@ -1,0 +1,22 @@
+{% extends 'appKey/base.html' %}
+{% block title %}Карточки товаров{% endblock %}
+{% block content %}
+<h1>Товарz</h1>
+{% for product in products %}
+    <div>
+        <h2>{{product.title}}</h2>
+        <p>{{product.desc|safe}}</p>
+        <p>{{product.price}}, Цена: {{product.currency}}</p>
+        <form action="{% url 'url-home' %}" method="post">
+            {% csrf_token %}
+            <input type="text" value="{{addCategory}}" name="addCategory" hidden>
+            <input type="text" value="Введите подкатегорию">
+            <button>Добавить</button>
+        </form>
+        {% for photo in photos %}
+            <img src="{{photo.photo.url}}" alt="">
+        {% endfor %}
+        
+    </div>
+{% endfor %}
+{% endblock %}
