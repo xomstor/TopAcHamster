@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Category, Product, SubCategory
+from .models import Category, Product, SubCategory, PhotoProduct
+from django_summernote.admin import SummernoteModelAdmin
 
 # @admin.register(Category)
 # class CategoryAdmin(admin.ModelAdmin):
@@ -22,12 +23,6 @@ from .models import Category, Product, SubCategory
 #         verbose_name = 'Подкатегория'
 #         verbose_name_plural = 'Подкатегории'
         
-@admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ['title', 'desc', 'price', 'date', 'subcategory', 'currency',]
-    list_display_links = ['title',]
-    raw_id_fields = ['subcategory',]
-    search_fields = ['title',]
 
         
      
@@ -44,3 +39,20 @@ class CategoryAdmin(admin.ModelAdmin):
         model = Category # название модели - родитель
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
+
+class PhotoProductStaсked(admin.StackedInline):
+    model = PhotoProduct # дочерняя модель
+    extra = 1
+
+@admin.register(Product)
+class ProductAdmin(SummernoteModelAdmin):
+    summernote_fields = 'desc'
+    inlines = [PhotoProductStaсked,]
+    list_display = ['id','title', 'price', 'date', 'subcategory', 'currency',]
+    list_display_links = ['subcategory', 'title',]
+    raw_id_fields = ['subcategory',]
+    search_fields = ['title',]
+    class Meta:
+        model = Product
+        verbose_name = 'Продукт'
+        verbose_name_plural = 'Продукты'
