@@ -1,0 +1,11 @@
+{% extends 'appKey/base.html' %}
+{% block title %}Т{% endblock %}
+{% block content %}
+    {% for product in cards %}
+    <div class="mane" style="background-color: rgb(245, 234, 219);">
+        <h2 style="background-color: rgb(43, 245, 245); max-width: 300px;">{{product.title}}</h2>
+        <p>Цена: {{product.price}}, {{product.currency}}</p>
+        <a href="{% url 'url-product' product.id %}" style="text-decoration: none; font-size: large;">Посмотреть подробно этот товар</a>
+            {% endfor %}
+    </div>   
+{% endblock %}

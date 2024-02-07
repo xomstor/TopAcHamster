@@ -92,4 +92,3 @@ class PhotoProduct(models.Model):
         verbose_name = 'Фото (изображение)'
         verbose_name_plural = 'Изображения продуктов'
         
-        

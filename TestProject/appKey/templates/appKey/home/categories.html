@@ -1,0 +1,15 @@
+{% extends 'appKey/base.html' %}
+{% block title %}Штучки | Карточки | Товары{% endblock %}
+
+{% block content %}
+    {% for category, subcategories in object.items %}
+        <h2>{{category}}</h2>
+        <ul>
+            {% for category_id, sub_category in subcategories.items %}
+                <li>
+                    <a href="{% url 'url-product' category_id %}">{{sub_category}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+    {% endfor %}
+{% endblock %}
