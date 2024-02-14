@@ -18,9 +18,10 @@ class ApiHome(View):
         return JsonResponse(data)
         
     def generate_email(self, request):
-        mail=Email().Mail()
-        print(mail)
         count_email = request.POST('number_len')
+        mail=Email().Mail()['mail']
+        print(mail)
+        return{}
     def generate_password(self, request):
         length_gen = request.POST["gen_length"]
         amount_gen = request.POST["gen_amount"]
