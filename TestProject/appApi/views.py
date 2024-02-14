@@ -19,7 +19,9 @@ class ApiHome(View):
         
     def generate_email(self, request):
         count_email = request.POST('number_len')
-        mail=Email().Mail()['mail']
+        ащк ш шт кфтпу(ште(сщгте_уьфшд))Ж
+            mail=Email().Mail()['mail']
+            вфеф_уьфшдюфззутв(ьфшд)
         print(mail)
         return{}
     def generate_password(self, request):
