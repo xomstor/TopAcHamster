@@ -1,4 +1,22 @@
 $(document).ready(function() {
+    function submit_email(e) {
+        console.log(e.target)
+        e.preventDefault();
+        let form = $(this)
+        let len = form.find("input[name='len']").val()
+        let csrftoken = form.find('input[name="csrfmiddlewaretoken"]')
+        
+        $ajax.({
+            type : 'POST',
+            url : '/api',
+            data : {
+                csrfmiddlewaretoken : csrftoken,
+                number_len : len,
+                action : 'generate-email'
+            }
+        })
+    }
+    $('#form_generate_email').submit(submit_email)
     $('.send-btn').click(function() {
         $.ajax({
             type : 'POST',
@@ -15,10 +33,10 @@ $(document).ready(function() {
                     p.textContent = data.data[i];
                     section.appendChild(p);
                 }
-                
+            $('#form_generate_email').submit(submit_email(e))   
             },
             error : function(data) {
-                alert('error1')
+                alert('error1'),
                 console.log(data)
             }
         })

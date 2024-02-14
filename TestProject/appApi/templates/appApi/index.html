@@ -12,6 +12,13 @@
     <input type="number" id="gen_amount" placeholder="Введите количество паролей">
     <button class="send-btn">Сгенерировать пароль</button>
     <div class="passwords" id="passwords">
+
+        <form method="post" id="form_generate_email">
+        {% csrf_token %}
+        <input type="number" name = "len" placeholder="Сколько сгенерировать emails?" required>
+        <button>Сгенерировать</button>
+        </form>
+        
         <p id="result"></p>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

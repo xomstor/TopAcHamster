@@ -22,3 +22,4 @@ class ApiHome(View):
                             'status' : 'ok',
                             'data' : data_pwds
                             })
+        
