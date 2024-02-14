@@ -4,15 +4,15 @@ $(document).ready(function() {
         e.preventDefault();
         let form = $(this)
         let len = form.find("input[name='len']").val()
-        let csrftoken = form.find('input[name="csrfmiddlewaretoken"]')
-        
-        $ajax.({
+        let csrftoken = form.find('input[name="csrfmiddlewaretoken"]').val();
+        setTimeout(console.log,100)
+        $.ajax({
             type : 'POST',
             url : '/api',
             data : {
                 csrfmiddlewaretoken : csrftoken,
                 number_len : len,
-                action : 'generate-email'
+                action : 'generate-email',
             }
         })
     }
@@ -22,6 +22,7 @@ $(document).ready(function() {
             type : 'POST',
             url : '/api',
             data : {
+                action : 'generate-password',
                 csrfmiddlewaretoken : $('meta[name="csrf-token"]').attr('content'),
                 gen_length : $('#gen_length').val(),
                 gen_amount : $('#gen_amount').val(),
