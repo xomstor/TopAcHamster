@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.views import View
 from django.http import JsonResponse
 import random
-from fake_email import Email
+from mimesis import Person, Internet
+from mimesis.locales import Locale
+person = Person(Locale.RU)
 
 
 class ApiHome(View):
@@ -18,12 +20,17 @@ class ApiHome(View):
         return JsonResponse(data)
         
     def generate_email(self, request):
-        count_email = request.POST('number_len')
-        ащк ш шт кфтпу(ште(сщгте_уьфшд))Ж
-            mail=Email().Mail()['mail']
-            вфеф_уьфшдюфззутв(ьфшд)
-        print(mail)
-        return{}
+        data_email = []
+        count_email = request.POST['number_len']
+        for i in range(int(count_email)):
+            mail=person.email()
+            data_email.append(mail)
+            # print(person.email())
+        return({
+                'status' : 'ok',
+                'data_email' : data_email
+        })
+        
     def generate_password(self, request):
         length_gen = request.POST["gen_length"]
         amount_gen = request.POST["gen_amount"]
