@@ -1,0 +1,15 @@
+{% extends 'appAuth/base.html' %}
+{% block title %}Неправильное имя пользователя/уже зарегистрирован{% endblock %}
+    
+{% block form %}
+    <form method="post" id ="form_auth">
+        {% csrf_token %}
+        <input type="text" name="login" placeholder="Введите имя пользователя" required>
+        <input type="text" name="name" placeholder="Введите имя">
+        <input type="text" name="surname" placeholder="Введите фамилия">
+        <input type="email" name="email" placeholder="Введите почту" required>
+        <input type="password" name="password" placeholder="Введите пароль" required>
+        <input type="password" name="password2" placeholder="Повторите пароль" required>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+{% endblock %}

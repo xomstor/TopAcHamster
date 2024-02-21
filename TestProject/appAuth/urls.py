@@ -5,5 +5,6 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('', views.PageAuth.as_view(), name='url-auth'),
+    path('reg/', views.PageReg.as_view(), name='reg-url'),
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('images/favicon.ico')))
 ]
