@@ -10,7 +10,7 @@ class PageAuth(View):
         print(request.user.is_authenticated)
         return render(request, 'appAuth/auth/index.html')
     def post(self, request):
-        login = request.POST['username']
+        _login = request.POST['username']
         password = request.POST['password']
         user = authenticate(
             request,
