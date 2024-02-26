@@ -6,7 +6,7 @@
 html[data-theme="light"],
 :root {
     --primary: #79aec8;
-    --secondary: #417690;
+    --secondary: #a100b6;
     --accent: #f5dd5d;
     --primary-fg: #fff;
 
@@ -24,8 +24,8 @@ html[data-theme="light"],
     --breadcrumbs-link-fg: var(--body-bg);
     --breadcrumbs-bg: #264b5d;
 
-    --link-fg: #417893;
-    --link-hover-color: #036;
+    --link-fg: #02ff96;
+    --link-hover-color: rgb(0, 255, 157);
     --link-selected-fg: var(--secondary);
 
     --hairline-color: #e8e8e8;
@@ -43,8 +43,8 @@ html[data-theme="light"],
 
     --button-fg: #fff;
     --button-bg: var(--secondary);
-    --button-hover-bg: #205067;
-    --default-button-bg: #205067;
+    --button-hover-bg: #52c8ff;
+    --default-button-bg: #3cc1ff;
     --default-button-hover-bg: var(--secondary);
     --close-button-bg: #747474;
     --close-button-hover-bg: #333;
@@ -593,6 +593,7 @@ input[type=button][disabled].default {
     font-size: 0.75rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    border-radius: 30px;
 }
 
 .module table {

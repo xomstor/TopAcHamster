@@ -23,6 +23,9 @@ INSTALLED_APPS = [
     'appKey',
     'appApi',
     'appAuth',
+    "admin_interface",
+    # 'grappelli',
+    "colorfield",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -118,3 +121,5 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+X_FRAME_OPTIONS = "SAMEORIGIN"
+SILENCED_SYSTEM_CHECKS = ["security.W019"]
