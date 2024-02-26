@@ -62,9 +62,6 @@ $(document).ready(function() {
                     $.('#result').text("Регистрация не прошла");
                 }
                 }
-                }
-            }
         })
     })
-
 })
