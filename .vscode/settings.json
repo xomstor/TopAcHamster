@@ -1,3 +1,5 @@
 {
-    "px-to-vw.viewportWidth": 1296
+    "px-to-vw.viewportWidth": 1296,
+    "codeium.enableExplainProblem": true,
+    "codeium.enableInComments": true
 }

@@ -5,10 +5,26 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from .models import ContentNews
+
 
 class PageAuth(View):
     def get(self, request):
-        print(request.user.is_authenticated)
+        # print(request.user.is_authenticated)
+        
+        # try: 
+        #     ContentNews.objects.get(title = 'Хурма внутри')
+        # except:
+        #     ContentNews.objects.create(
+        #         title = 'Хурма внутри',
+        #         name_url = 'Хурма внутри',
+        #     )
+        # вместо этого трайк эксепт можно новым методом
+        
+        # get_mews, created_news = ContentNews.objects.get_or_create(title = 'Хурма внутри', name_url = 'Хурма внутри')
+        # print(get_mews)
+        # print(created_news)      
+        # print(request.GET.get('last_name', None))  
         return render(request, 'appAuth/auth/index.html')
     def post(self, request):
         _login = request.POST['username']
