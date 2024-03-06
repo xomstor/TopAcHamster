@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.views import View
 import uuid
 from .models import PubNews
+from user_agents import parse
 
 class PublicationPage(View):
     def get(self, request):
@@ -26,3 +27,23 @@ class PublicationPage(View):
         return JsonResponse({
             'status' : 'error'
         })
+
+class OpenPublicPage(View):
+    def get(self, request, url_name_pub):
+        user_agent = request.META['HTTP_USER_AGENT']
+        ua_parse = parse(user_agent)
+        print(ua_parse.os)
+        print(ua_parse.browser)
+        print(ua_parse.device)
+        print(ua_parse.is_bot)        
+        print(ua_parse.is_mobile)
+        print(ua_parse.is_tablet)
+        print(ua_parse.is_email_client)
+        print(user_agent)
+        try:
+            obj_pub = PubNews.objects.get(url_name = url_name_pub)
+            return render(request, 'appPublication/result.html', {'content_obj' : obj_pub.content})
+        except:
+            return redirect('url-open-publication')
+        
+        

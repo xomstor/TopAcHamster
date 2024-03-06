@@ -12,7 +12,7 @@
     {% block content %}{% endblock %}
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="{% static 'appPublication/js/scripts.js' %}"></script>
+<script src="{% static 'appPublication/js/scripts.js' %}?version={% now '%Y%m%d%H%M%S' %}"></script>
 </body>
 </html>
 

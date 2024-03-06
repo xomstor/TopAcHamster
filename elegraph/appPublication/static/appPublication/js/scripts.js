@@ -20,8 +20,24 @@ $(document).ready(function() {
                 content : form.find('#mytextarea').val(),
             },
             success : function(response) {
-                console.log(response);
-                alert('Сохранено');
+                if (response['status'] === 'ok') {
+                    alert('Сохранено');
+                    // let div = document.querySelector('.story-links');
+                    // let a = document.createElement('a');
+                    // let p = document.createElement('p');
+                    // a.href = response['url'];
+                    // a.textContent = `Ссылка на публикацию: ${response.url}`
+                    // div.appendChild(a);
+                    let div = $('.story-links');
+                    let a = $('<a></a>').attr('href', response['url']).text(`Ссылка на публикацию: ${response.url}`);
+                    div.append(a);
+                    let p = $('<p></p>');
+                    div.append(p);
+                    // form[0].reset();
+                }
+                if (response['status'] === 'error') {
+                    alert('Произошла ошибка, ссылка на публикацию не доступна');
+                }
             },
             error : function(response) {
                 alert('Произошла ошибка');
