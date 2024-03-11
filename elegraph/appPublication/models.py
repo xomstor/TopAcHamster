@@ -9,6 +9,7 @@ class PubNews(models.Model):
     date_time = models.DateTimeField('дата и время публикации', auto_now_add=True, null = False)
 # default = datetime.datetime.now
     url_name = models.CharField('url, имя ссылки', max_length=25, null=False, unique=True)
+    count = models.IntegerField(verbose_name = "Количество просмотров", default=0, null = False)
     def __str__(self):
         return self.url_name
     

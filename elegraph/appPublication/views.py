@@ -4,6 +4,7 @@ from django.views import View
 import uuid
 from .models import PubNews
 from user_agents import parse
+from appnalytics.models import TableOfUserAgents
 
 class PublicationPage(View):
     def get(self, request):
@@ -42,6 +43,18 @@ class OpenPublicPage(View):
         print(user_agent)
         try:
             obj_pub = PubNews.objects.get(url_name = url_name_pub)
+            obj_pub.count = obj_pub.count + 1
+            obj_pub.save()
+            print(obj_pub.count)
+            TableOfUserAgents.objects.create(
+                pub_news = obj_pub,
+                user_agent = user_agent,
+                user_agent_parse_os = ua_parse.os,
+                user_agent_parse_browser = ua_parse.browser,
+                user_agent_parse_is_bot = ua_parse.is_bot,
+                user_agent_parse_is_touch = ua_parse.is_mobile,
+                device_type = "desktop" if ua_parse.is_tablet == False else "tablet"
+            )
             return render(request, 'appPublication/result.html', {'content_obj' : obj_pub.content})
         except:
             return redirect('url-open-publication')

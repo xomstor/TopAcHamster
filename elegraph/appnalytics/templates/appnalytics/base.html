@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body style="display: flex;">
+    {% block content %}{% endblock %}
+    <div style="width: 33%; transform: rotate(-0deg);">
+        <canvas id="browsers"></canvas>
+      </div>
+    <div style="width: 30%; transform: rotate(-0deg);">
+        <canvas id="os"></canvas>
+      </div>
+    <div style="width: 33%; transform: rotate(-0deg);">
+        <canvas id="tablet_or_pc"></canvas>
+      </div>
+    <div style="width: 33%; transform: rotate(-0deg);">
+        <canvas id="is_bot"></canvas>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        let browsers = {{browsers|safe}}
+        const ctx = document.getElementById('browsers');
+      
+        new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: Object.keys(browsers),
+            datasets: [{
+              data: Object.values(browsers),
+              borderWidth: 10
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+              
+            }
+          }
+        });
+      </script>
+      <script>
+        let osa = {{os|safe}}
+        const ctxos = document.getElementById('os');
+      
+        new Chart(ctxos, {
+          type: 'doughnut',
+          data: {
+            labels: Object.keys(osa),
+            datasets: [{
+              data: Object.values(osa),
+              borderWidth: 10
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+      <script>
+        let tablet_or_peka = {{tablet_or_pc|safe}}
+        const ctxtablet_or_pc = document.getElementById('tablet_or_pc');
+        new Chart(ctxtablet_or_pc, {
+          type: 'doughnut',
+          data: {
+            labels: Object.keys(tablet_or_peka),
+            datasets: [{
+              data: Object.values(tablet_or_peka),
+              borderWidth: 5
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+      <script>
+        let is_bot = {{is_bot|safe}}
+        const ctxis_bot = document.getElementById('is_bot');
+        new Chart(ctxis_bot, {
+          type: 'doughnut',
+          data: {
+            labels: Object.keys(is_bot),
+            datasets: [{
+              data: Object.values(is_bot),
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        })
+      </script>
+<script src="{% static 'appAnalytics/js/scripts.js' %}"></script>
+</body>
+</html>
