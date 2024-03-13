@@ -18,3 +18,4 @@ class TableOfUserAgents(models.Model):
     class Meta:
         verbose_name = "История (статистика) Пользовательский агент"
         verbose_name_plural = "Просмотры (статистика) Пользовательские агенты"
+        

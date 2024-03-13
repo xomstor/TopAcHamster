@@ -61,4 +61,11 @@ class ProductPage(View):
         else:
             return redirect('url-categories')
 
-        
+class Search(View):
+    def post(self, request):
+        name_search = request.POST["search"]
+        product = Product.objects.filter(title__iregex=name_search).values('title', 'id')
+        return JsonResponse({
+            "status": "ok",
+            "product" : list(product),
+            })
