@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'appKey',
     'appApi',
     'appAuth',
+    'appResponse',
     "admin_interface",
     # 'grappelli',
     "colorfield",
