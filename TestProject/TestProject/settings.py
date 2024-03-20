@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'appAuth',
     'appResponse',
     "admin_interface",
+    "appShop",
     # 'grappelli',
     "colorfield",
     'django.contrib.admin',
