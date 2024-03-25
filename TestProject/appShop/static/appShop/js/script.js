@@ -23,7 +23,8 @@ addBack.forEach((btn) => {
                 csrfmiddlewaretoken: $('meta[name="csrf-token"]').attr('content'),
             },
             success: function(response) {
-                // console.log('POST request successful');
+                backed = response.backed;
+                console.log(backed);
             },
             error: function(xhr, status, error) {
                 // console.error('Error in POST request:', error);
@@ -34,4 +35,54 @@ addBack.forEach((btn) => {
             content.remove();
         })
     })
+})
+
+$('#form').submit(function(event) {
+    event.preventDefault();
+
+    var formData = {
+        janr: $('input[name=janr]').val(),
+        title: $('input[name=title]').val(),
+        price: $('input[name=price]').val()
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: '/shop/',
+        data: formData,
+        success: function(response) {
+            // Handle the successful response
+        },
+        error: function(xhr, status, error) {
+            // Handle the error response
+        }
+    });
+
+    $('input[name=janr]').val('');
+    $('input[name=title]').val('');
+    $('input[name=price]').val('');
+
+    return false;
+})
+
+document.querySelector("#formAjax").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let form = document.querySelector("#formAjax");
+    let text = form.querySelector("textarea").value;
+    let csrf = form.querySelector("input[name=csrfmiddlewaretoken]").value;
+    $.ajax({
+        type: "POST",
+        url: form.getAttribute("action"),
+        data: {
+            csrfmiddlewaretoken: csrf,
+            text: text
+        },
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(xhr, status, error) {
+            console.error("Error:", error);
+        }
+    });
+
 })
