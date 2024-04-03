@@ -10,9 +10,10 @@ urlpatterns = [
     path('', include('appKey.urls')),
     path('api/', include('appApi.urls')),
     path('auth/', include('appAuth.urls')),
+    path('method-auth/', include('appMethodAuth.urls')),
     path('shop/', include('appShop.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('response/', include('appResponse.urls')),
     # static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-]
+]   
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -30,3 +30,4 @@ class MethodAjaxPost(View):
     def post(self, request):
         text = request.POST['text']
         return JsonResponse({})
+    

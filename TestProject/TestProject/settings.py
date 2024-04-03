@@ -15,9 +15,7 @@ SECRET_KEY = 'django-insecure-kad5!18vun3xr0isk*ba2rz61o138r*&n$*&s#)1xds=@x#lak
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
-# Application definition
+APPEND_SLASH = False
 
 INSTALLED_APPS = [
     'appKey',
@@ -26,6 +24,7 @@ INSTALLED_APPS = [
     'appResponse',
     "admin_interface",
     "appShop",
+    "appMethodAuth",
     # 'grappelli',
     "colorfield",
     'django.contrib.admin',
